@@ -21,15 +21,13 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.data.repository.config.BootstrapMode;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.thingsboard.server.dao.util.TbAutoConfiguration;
-import org.thingsboard.server.dao.util.TimescaleDBTsLatestDao;
 
 @Configuration
 @TbAutoConfiguration
-@ComponentScan({"org.thingsboard.server.dao.sqlts.timescale"})
+@ComponentScan({"org.thingsboard.server.dao.sqlts.tdengine"})
 @EnableJpaRepositories(value = {"org.thingsboard.server.dao.sqlts.insert.latest.sql",
         "org.thingsboard.server.dao.sqlts.latest"}, bootstrapMode = BootstrapMode.LAZY)
 @EnableTransactionManagement
-@TimescaleDBTsLatestDao
-public class TimescaleTsLatestDaoConfig {
+public class TDengineTsLatestDaoConfig {
 
 }

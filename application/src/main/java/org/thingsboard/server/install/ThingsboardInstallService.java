@@ -17,6 +17,7 @@ package org.thingsboard.server.install;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
@@ -47,7 +48,7 @@ public class ThingsboardInstallService {
     @Value("${install.upgrade.from_version:1.2.3}")
     private String upgradeFromVersion;
 
-    @Value("${install.load_demo:false}")
+    @Value("${install.load_demo:true}")
     private Boolean loadDemo;
 
     @Value("${state.persistToTelemetry:false}")
